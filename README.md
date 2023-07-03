@@ -8,6 +8,6 @@ npm start<br>
 To start the server:<br>
 cd backend<br>
 npm install<br>
-Copy backend/.env into backend/.env.local and update GOOGLE_CLIENT_SECRET
+Copy backend/.env into backend/.env.local and update GOOGLE_CLIENT_SECRET<br>
 Update GOOGLE_CLIENT_ID in backend/passport.js<br>
 npm start<br>
