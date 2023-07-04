@@ -23,7 +23,6 @@ const App = () => {
       const response = await axios.get('http://localhost:5000/auth/login/success',
           options);
       if (response.status === 200) {
-        debugger;
         setUser(response.data.user);
       }
     } catch(error) {

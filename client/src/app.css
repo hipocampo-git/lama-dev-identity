@@ -209,7 +209,7 @@ input{
   text-decoration: none;
 }
 
-.g_id_signin {
+.g_id_signin, #customButton {
   margin-bottom: 20px;
 }
 

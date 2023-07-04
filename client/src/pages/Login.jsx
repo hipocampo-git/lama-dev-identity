@@ -9,6 +9,11 @@ const Login = () => {
 
   const googleButton = useRef(null);
 
+
+  const callback = (response) => {
+    console.log(response);
+  }
+
   const loadScript = (src) =>
       new Promise((resolve, reject) => {
         if (document.querySelector(`script[src="${src}"]`)) return resolve()
@@ -26,16 +31,11 @@ const Login = () => {
         .then(() => {
           /* global google */
           console.log(google);
-          debugger;
           google.accounts.id.initialize({
             client_id: GOOGLE_CLIENT_ID,
             login_uri: "http://localhost:5000/auth/google",
             ux_mode: "redirect",
-            // ux_mode: "popup",
-            // auto_prompt: false
-            callback: (response) => {
-              console.log(response);
-            }
+            callback: callback
           })
           google.accounts.id.renderButton(
               googleButton.current, //this is a ref hook to the div in the official example
@@ -63,7 +63,7 @@ const Login = () => {
       <h1 className="loginTitle">Choose a Login Method</h1>
       <div className="wrapper">
         <div className="left">
-          <div ref={googleButton}></div>
+          <div id="customButton" ref={googleButton}></div>
 {/*          <div id="g_id_onload"
                data-client_id={GOOGLE_CLIENT_ID}
                data-login_uri="http://localhost:5000/auth/google"
