@@ -9,10 +9,9 @@ const Login = () => {
 
   const googleButton = useRef(null);
 
-
-  const callback = (response) => {
-    console.log(response);
-  }
+  // const callback = (response) => {
+  //   console.log(response);
+  // }
 
   const loadScript = (src) =>
       new Promise((resolve, reject) => {
@@ -34,8 +33,7 @@ const Login = () => {
           google.accounts.id.initialize({
             client_id: GOOGLE_CLIENT_ID,
             login_uri: "http://localhost:5000/auth/google",
-            ux_mode: "redirect",
-            callback: callback
+            ux_mode: "redirect"
           })
           google.accounts.id.renderButton(
               googleButton.current, //this is a ref hook to the div in the official example
