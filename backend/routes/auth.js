@@ -35,6 +35,18 @@ router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
 
 router.post("/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 
+
+router.post("/google2", (req, res) => {
+  console.log('here 1000');
+});
+
+router.get(
+    "/google/callback2",
+    (req, res) => {
+      console.log('here 2000');
+    }
+);
+
 router.get(
   "/google/callback",
   passport.authenticate("google", {

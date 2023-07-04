@@ -29,9 +29,13 @@ const Login = () => {
           debugger;
           google.accounts.id.initialize({
             client_id: GOOGLE_CLIENT_ID,
-            login_url: "http://localhost:5000/auth/google",
-            auto_prompt: false
-            // callback: handleCredentialResponse,
+            login_uri: "http://localhost:5000/auth/google",
+            ux_mode: "redirect",
+            // ux_mode: "popup",
+            // auto_prompt: false
+            callback: (response) => {
+              console.log(response);
+            }
           })
           google.accounts.id.renderButton(
               googleButton.current, //this is a ref hook to the div in the official example

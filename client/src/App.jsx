@@ -38,22 +38,22 @@ const App = () => {
     }
   }
 
-  // useEffect(() => {
-  //   let script   = document.getElementById('googleScript');
-  //
-  //   if (script.getAttribute('data-loaded') !== 'true') {
-  //     const script = document.createElement('script');
-  //     script.src = 'https://accounts.google.com/gsi/client';
-  //     script.onload = () => {
-  //       loader().then();
-  //       console.log('loaded');
-  //     };
-  //     document.body.appendChild(script);
-  //   } else {
-  //     loader().then();
-  //   }
-  //
-  // }, []);
+  useEffect(() => {
+    let script   = document.getElementById('googleScript');
+
+    // if (script.getAttribute('data-loaded') !== 'true') {
+    //   const script = document.createElement('script');
+    //   script.src = 'https://accounts.google.com/gsi/client';
+    //   script.onload = () => {
+    //     loader().then();
+    //     console.log('loaded');
+    //   };
+    //   document.body.appendChild(script);
+    // } else {
+      loader().then();
+    // }
+
+  }, []);
 
   return (
     <BrowserRouter>
